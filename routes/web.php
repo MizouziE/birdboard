@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/projects', 'Projectscontroller@index');
-
+Route::get('/projects/{projects}', 'ProjectsController@show');
 Route::post('/projects', 'ProjectsController@store');
