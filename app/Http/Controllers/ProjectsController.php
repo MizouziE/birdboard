@@ -11,12 +11,13 @@ class ProjectsController extends Controller
         $projects = Project::all();
 
         return view('projects.index', compact('projects'));
-    
+
     }
 
     public function store()
     {
         //validate
+        request()->validate(['title' => 'required', 'description' => 'required']);
 
         //persist
         Project::create(request(['title', 'description']));
